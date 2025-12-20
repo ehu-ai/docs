@@ -51,6 +51,18 @@
       }
     ]
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
   "feedback": {
     "raiseIssue": true,
     "suggestEdit": true,

@@ -1,52 +1,82 @@
 ---
 title: "Why Product Graph?"
+description: "Engineering is no longer the bottleneck. Product is."
 icon: "question"
 ---
 
-## Why should I use an external prompt management platform?
+## Product Is the New Bottleneck
 
-Building and maintaining integrations with large language models (LLM) can be challenging. LLMs are inherently non-deterministic, and the landscape is rapidly evolving with new features, models, and providers emerging every month—each with its own data model. This makes it difficult to test, switch models, and keep your integration up to date. An external prompt management platform like Product Graph helps you navigate these challenges, enabling faster iterations and delivering a better experience for your customers.
+With AI agents like Cursor, Devin, and Codex accelerating development, engineering teams are moving faster than ever. The bottleneck has shifted upstream: deciding **what to build** and **why it matters**.
 
-**Decoupled**: Keep prompts separate from your codebase, allowing you to iterate quickly without waiting for full engineering releases.
+Product teams now struggle to keep up. Requirements are scattered, context is tribal, and documentation is stale. This slows everyone down: people and AI alike.
 
-**Test-Driven**: Confidently make changes and test new models by comparing results and iterating based on real-time feedback.
+<CardGroup cols={3}>
+  <Card title="Engineering Outpacing Product" icon="rocket">
+    AI-powered development moves at unprecedented speed. Product definition
+    can't keep pace, creating a new constraint on delivery.
+  </Card>
+  <Card title="Fragmented Product Context" icon="puzzle-piece">
+    Rationale and requirements live across tools and tribal knowledge, lacking
+    structure or a single source of truth.
+  </Card>
+  <Card title="Stale Documentation" icon="clock-rotate-left">
+    Docs quickly become outdated, lack versioning, and don't reflect changes,
+    making them unreliable for teams and AI.
+  </Card>
+</CardGroup>
 
-**Flexible Integration**: Seamlessly integrate with various LLM providers and models, making it easier to experiment with different options without significant rework.
+## The Cost of Fragmented Context
 
-**Monitoring**: Leverage built-in observability features to monitor prompt performance and make data-driven adjustments to improve outcomes.
+When product context is scattered and inconsistent, the consequences compound:
 
-**Collaborative**: Bring together technical and non-technical team members—such as developers, product managers, and QA—to refine your LLM configurations.
+- **Misalignment**: Teams and AI agents don't know what matters, leading to wasted effort and conflicting priorities.
+- **Duplicated work**: Without a source of truth, multiple people solve the same problems in different ways.
+- **Missed details**: Critical requirements slip through the cracks when context lives in someone's head.
+- **Slower onboarding**: New team members and AI agents can't ramp up quickly without structured, reliable documentation.
+- **Regressions and rework**: Outdated specs lead to building the wrong thing, or rebuilding the right thing.
+- **Lost confidence**: Without traceability and versioning, teams and AI can't trust or act on product information.
 
-**Organized**: Manage all your LLM configurations in one place, with easy access to past versions and change history.
+## How Product Graph Helps
 
-## Why Product Graph?
+**Product Graph** is a software requirements platform for AI-first teams that captures the _what_ and _why_ in a structured way. It makes structured, machine-readable requirements the canonical source of truth so teams and agents can move from idea to impact with clarity and speed.
 
-Product Graph is the ultimate tool for prompt engineering, management, and LLM evaluation, specifically designed for teams building AI applications. Here’s why your team should choose Product Graph as your prompt management platform:
+### From conversation to clarity
 
-**Comprehensive Toolset**: Product Graph offers a complete suite of tools for prompt engineering, management, and evaluation, making it the go-to platform for developing and refining LLM-based applications.
+Convert discussions into structured PRDs and clear, LLM-optimized requirements in minutes. The AI assistant drives clarification and feedback, surfacing gaps and mapping key UX flows so teams and agents align before building, not after.
 
-**User-Friendly Interface**: With its simple and intuitive interface, Product Graph makes it easy for both developers and non-technical team members to experiment with prompts and models from providers like Open AI and Anthropic.
+### Agent-ready by default
 
-**Robust Testing Suite**: Our platform provides a robust testing environment that allows you to refine prompts and configurations with precision. This test-driven approach ensures that your prompts perform as expected in real-world scenarios.
+Turn complex ideas into small, buildable units with goals, context, and acceptance criteria. Your requirements translate directly into executable plans for agents like Cursor, Devin, and Codex.
 
-**Optimized Workflows**: Product Graph streamlines the prompt development lifecycle, enabling faster iterations and reducing the time it takes to go from ideation to deployment.
+### Living documentation
 
-**Cross-Provider Flexibility**: Seamlessly experiment with and switch between different LLM providers without the hassle of significant rework, giving your team the flexibility to choose the best model for your needs.
+AI-assisted updates maintain agent-ready docs as scope and priorities change. Every change is versioned, reviewable, and reversible. No more stale specs causing regressions.
 
-**Data-Driven Refinement**: Utilize built-in observability and performance monitoring features to make informed adjustments, ensuring that your AI applications are not only effective but also efficient.
+### Connected to your workflow
 
-**Collaboration-Ready**: Designed for teams, Product Graph supports collaboration across roles—whether you're a developer, product manager, or QA —ensuring that everyone involved in the AI development process can contribute to and benefit from the platform.
+Pull from docs and wikis, push to planning and issue tracking, and bring requirements into MCP-compatible IDEs and AI clients. Product Graph integrates with Notion, Confluence, Google Drive, Linear, and Jira for a connected source of truth.
 
-**Future-Proof**: As the LLM landscape continues to evolve, Product Graph is built to adapt, allowing your team to stay ahead of the curve and leverage the latest advancements in AI technology.
+## Built for AI-First Teams
 
-## Benfits
+Product Graph is designed from the ground up for how modern teams actually work.
 
-**Accelerated Development**: Product Graph allows you to iterate quickly by decoupling prompt development from engineering releases. This means faster experimentation, testing, and deployment, enabling your team to bring AI-driven features to market more efficiently.
+**One source of truth.** No more hunting through Slack threads, Notion pages, and Google Docs to piece together what you're building. Structured requirements replace scattered prose, giving teams and AI agents a single place to look.
 
-**Collaborative Workflow**: The platform fosters collaboration between technical and non-technical team members. Whether you’re a developer, product manager, or QA, Product Graph provides an environment where everyone can contribute to refining and managing prompts.
+**Optimized for agents.** Every artifact is machine-readable and LLM-optimized. Your requirements don't just document intent; they translate directly into executable context for AI coding agents.
 
-**Seamless Multi-Provider Support**: Easily manage and optimize prompts across different LLM providers like Open AI and Anthropic. The platform’s flexible integration capabilities make it simple to switch models or test new configurations without significant rework.
+**Full traceability.** Every decision, requirement, and change is connected with complete version history. Know why something was built, when it changed, and who approved it. Roll back when needed.
 
-**Comprehensive Testing and Evaluation**: Ensure your prompts meet the highest standards with robust evaluation tools. From deterministic rule-based testing to human reviews, Product Graph helps you validate prompt effectiveness, ensuring they perform as expected in real-world scenarios.
+**Fits your workflow.** Product Graph connects to the tools you already use through robust APIs and protocols like MCP. Pull context in, push requirements out, and keep everything in sync.
 
-**Real-Time Monitoring and Optimization**: Keep your LLMs performing at their best with built-in observability features. Track metrics, logs, and traces in real-time to identify bottlenecks, troubleshoot issues, and continuously optimize your AI applications.
+**Clear accountability.** Every artifact has an owner. Every change goes through an explicit review path. Whether updates come from humans or agents, the workflow stays auditable and controlled.
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Get Started" href="/quickstart/introduction" icon="rocket">
+    See what Product Graph can do for your team.
+  </Card>
+  <Card title="Explore Features" href="/features/overview" icon="sparkles">
+    Dive into the editor, chat, documents, and more.
+  </Card>
+</CardGroup>

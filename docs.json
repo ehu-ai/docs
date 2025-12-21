@@ -43,7 +43,6 @@
           "features/chat",
           "features/editor",
           "features/collaboration",
-          "features/projects",
           "features/documents"
         ]
       }

@@ -29,15 +29,29 @@ These artifacts form the primary hierarchy of your product model. They're long-l
 
 ### Product
 
-The top-level container that all other core artifacts roll up to. A Product represents the complete offering you're building and defines the boundaries for everything beneath it.
+The top-level artifact that defines the boundaries, vision, and scope of what you're building. A Product represents your entire offering and serves as the root of the product specification hierarchy. It contains all the Capabilities, User Types, and Core Entities for that product.
 
-A Product document includes an overview, vision, guiding principles, problem statement, and value proposition.
+The Product document captures the strategic overview: the "why" and "what" at the highest level. It includes an overview, vision, guiding principles, problem statement, and value proposition.
+
+Products serve as the foundational anchor for all product specifications:
+
+- Define the overall vision, purpose, and value proposition
+- Establish boundaries for what is and isn't part of the product
+- Provide strategic context that all child artifacts inherit
+- Serve as the entry point for stakeholders to understand the offering
 
 ### Capability
 
-A high-level ability described in problem/outcome terms. Capabilities are stable pillars that last across releases.
+A high-level ability that the product provides, expressed in problem or outcome terms rather than implementation details. Capabilities represent the stable, enduring pillars of what the product can do, focusing on what ability users gain rather than which specific features exist.
 
-Capabilities represent _what_ your product can do, framed around user outcomes rather than implementation. Think of them as the major abilities your product provides. They rarely change and form the stable backbone of your product.
+Capabilities remain relatively constant across many releases while the Features beneath them evolve. Think of Capabilities as answering "What can users accomplish?" while Features answer "What can users do specifically?"
+
+Capabilities provide the strategic structure for organizing product functionality:
+
+- Frame product abilities in terms of user outcomes and problems solved
+- Create stable organizational pillars that persist across releases
+- Group related features under a common theme or goal
+- Communicate product value at a level executives and stakeholders understand
 
 **Parent:** Product (one Product has many Capabilities)
 
@@ -45,19 +59,52 @@ Capabilities represent _what_ your product can do, framed around user outcomes r
 
 ### Feature
 
-Concrete, user-facing behavior that realizes part of a Capability. Features are releasable units of functionality.
+A concrete, user-facing behavior or functionality that realizes part of a Capability. Features represent specific, releasable units of work that users can interact with and that deliver tangible value. Unlike Capabilities, which describe high-level abilities in outcome terms, Features describe the specific behaviors and interactions that make those abilities possible.
 
-Features are the specific, tangible things users interact with. While a Capability might last for years, Features are what you ship in a release cycle.
+Features serve as the primary unit of product development, bridging the gap between strategic Capabilities and detailed Requirements:
+
+- Break down abstract Capabilities into concrete, deliverable functionality
+- Define clear scope for development teams
+- Describe what the product does from a user's perspective
+- Enable release planning and roadmap management
+- Track progress within Capabilities as they deepen
+
+When writing Feature documents, focus on user-facing behavior and experience, not implementation details.
 
 **Parent:** Capability (one Capability has many Features)
 
 **Example:** "Thread Summaries Panel": a specific feature that shows AI-generated summaries of email threads
 
+#### Capability vs Feature
+
+| Capability                            | Feature                           |
+| ------------------------------------- | --------------------------------- |
+| Stable, lasts for years               | Ships in release cycles           |
+| Described in outcome terms            | Concrete, specific functionality  |
+| "What ability does the product have?" | "What can users do specifically?" |
+| Example: "Inbox Organization"         | Example: "Smart Categories Panel" |
+
 ### Requirement
 
-A formal statement of system behavior (functional or non-functional). Requirements are testable and atomic.
+A formal statement of a single, atomic system behavior or constraint that must be satisfied. Requirements bridge the gap between user-facing Features and testable Acceptance Criteria by specifying exactly what the system must do, or how it must perform, without describing implementation details. Each Requirement describes one behavior and is validated by multiple Acceptance Criteria.
 
-Requirements define exactly what the system must do. Each Requirement captures one atomic behavior. If you find yourself using "and" to connect distinct behaviors, split them into separate Requirements.
+Requirements translate Features into precise, testable specifications:
+
+- Define exactly what the system must do to deliver a Feature
+- Create unambiguous specifications that development can implement
+- Establish clear boundaries between different behaviors
+- Link to Projects for execution tracking
+
+Apply atomicity: one requirement equals one behavior. Avoid "and" across distinct behaviors.
+
+#### Requirement Types
+
+| Type           | Focus                | Example                                                              |
+| -------------- | -------------------- | -------------------------------------------------------------------- |
+| Functional     | What the system does | "The system must send email notifications when order status changes" |
+| Non-functional | How well it performs | "The inbox must load within 200ms for up to 1000 messages"           |
+| Constraint     | What it must not do  | "The system must not store user passwords in plain text"             |
+| Business rule  | Domain invariants    | "Order totals must include tax calculated per shipping destination"  |
 
 **Parent:** Feature (one Feature has many Requirements)
 
@@ -65,11 +112,15 @@ Requirements define exactly what the system must do. Each Requirement captures o
 
 ### Acceptance Criterion
 
-A testable condition proving a Requirement is met. Each criterion has a clear pass/fail outcome.
+A single, testable condition that proves a Requirement is satisfied. Written in Given-When-Then format, each AC defines one specific, observable, and measurable check with a clear pass/fail outcome. ACs are the most granular level of the product specification hierarchy and serve as the bridge between Requirements and executable test cases.
 
-Acceptance Criteria define how you'll verify a Requirement is implemented correctly. They use specific, measurable values, never subjective terms like "fast" or "short."
+Acceptance Criteria transform abstract Requirements into verifiable conditions:
 
-**Parent:** Requirement (one Requirement has many Acceptance Criteria)
+- Define exactly what "done" means for a Requirement
+- Provide unambiguous test cases for QA and development
+- Cover happy paths, edge cases, error states, and non-functional constraints
+- Create a contract between product, development, and QA teams
+- Eliminate subjective interpretation of Requirements
 
 **Writing testable criteria:**
 
@@ -78,6 +129,8 @@ Acceptance Criteria define how you'll verify a Requirement is implemented correc
 | "loads quickly"   | "completes within 200ms"           |
 | "short message"   | "maximum 50 characters"            |
 | "clearly visible" | "contrast ratio 4.5:1 per WCAG AA" |
+
+**Parent:** Requirement (one Requirement has many Acceptance Criteria)
 
 **Example:** "Given a message classified as Priority, When the inbox list renders, Then the message row displays a 'Priority' label."
 
@@ -101,67 +154,52 @@ These artifacts provide essential context and structure but sit outside the core
 
 ### User Type
 
-User Types represent the different people who use your product. Unlike personas with demographics, User Types focus on behaviors, goals, and constraints that affect how they interact with your product.
+A long-lived archetype representing a category of people who use the product. User Types capture who the users are, their goals, behaviors, workflows, constraints, and pain points, without being tied to demographic details. They serve as personas that inform feature design, requirement writing, and acceptance criteria by providing a shared understanding of the humans the product serves.
 
-**Example:** "Power Emailer": a user who processes hundreds of emails daily and needs aggressive automation and keyboard shortcuts
+A User Type document includes:
+
+- **Who they are**: The role and context of this user type (situation, not demographics)
+- **Goals and motivations**: What they're trying to accomplish and what drives their decisions
+- **Behaviors and workflows**: How they typically interact with the product
+- **Constraints and limitations**: Barriers they face (time, technical skill, device, accessibility needs)
+- **Pain points**: Frustrations or problems the product should address
+
+User Types differ from Core Entities: User Types describe who uses the system (people and their needs), while Core Entities describe what the system manages (domain concepts and objects).
+
+User Types can be attached to Features to show which users benefit, or to Requirements to clarify who the requirement serves.
+
+**Examples:** "Power Emailer" (high volume, values efficiency), "Occasional User" (infrequent visits, needs intuitive UI), "System Administrator" (manages settings, needs audit trails), "Mobile-first User" (needs touch-friendly UI), "Accessibility-focused User" (relies on screen reader or keyboard navigation)
 
 ### Core Entity
 
-Core Entities are the fundamental concepts in your domain, the "nouns" that users and your business naturally speak about. Think of them as vocabulary definitions that create shared understanding across your team.
+A fundamental domain concept (the "nouns") that a product manipulates, displays, stores, or reasons about. These essential conceptual objects form the shared vocabulary and structural backbone of the product's domain model. Core Entities establish clear definitions that the entire team and system can reference consistently.
 
-**Example:** "Email Thread": a conversation consisting of related messages, with states like active, archived, and snoozed
+Core Entities provide:
+
+- A shared vocabulary for discussing the product domain across teams (product, engineering, design)
+- Clear conceptual boundaries that inform how features are designed and built
+- Domain documentation that remains stable even as features evolve
+- A foundation for understanding relationships between concepts in the system
+- Reference definitions that Acceptance Criteria and Requirements can point to
+
+Core Entities are long-lived and stable. They represent enduring concepts in the domain, not implementation details. Focus on conceptual clarity over technical implementation: describe what something is, not how it is stored.
+
+Core Entities differ from User Types: entities represent things in the system; user types represent people who use the system.
+
+**Examples:** Email app: "Thread," "Message," "Label," "Contact," "Draft." E-commerce: "Order," "Cart," "Product," "Customer," "Shipment."
 
 ### Project
 
-Projects are temporary containers for execution. They group work that needs to be tracked together and have defined start and end dates.
+A temporary execution container that tracks a bounded scope of work to be delivered. Unlike the [core artifacts](/features/product-artifacts#core-artifacts), Projects are time-bound initiatives that link to existing artifacts for tracking, prioritization, and delivery management. Projects do not own artifacts; they reference them to define what is in scope for a particular initiative.
+
+Projects bridge the gap between product specification and execution:
+
+- Scope which artifacts are included in a specific release, sprint, or initiative
+- Track progress against a defined set of deliverables
+- Define goals, timelines, and success criteria for bounded work
+- Coordinate across multiple Capabilities, Features, and Requirements
+- Archive completed initiatives while preserving the underlying artifacts
+
+Projects reference, not own: deleting a Project removes links but leaves all artifacts intact. Linked artifacts can be edited independently; the Project provides a lens for viewing and tracking scope.
 
 **Example:** "Q1 Mobile Launch": a project tracking all the work needed to ship the mobile app by end of quarter
-
-## Capability vs Feature
-
-Understanding the difference between Capabilities and Features is essential:
-
-| Capability                            | Feature                            |
-| ------------------------------------- | ---------------------------------- |
-| Stable, lasts for years               | Ships in release cycles            |
-| Described in outcome terms            | Concrete, specific functionality   |
-| "What ability does the product have?" | "What can the user interact with?" |
-| Example: "Inbox Organization"         | Example: "Smart Categories Panel"  |
-
-## Creating Artifacts
-
-<Steps>
-<Step title="Choose the right artifact type">
-  Start at the appropriate level. If you're defining a broad ability, create a Capability. If you're specifying exact system behavior, create a Requirement.
-</Step>
-
-<Step title="Fill in the structure">
-  Use the guided templates for each artifact type. The AI assistant helps you
-  write clear, well-structured content and can identify missing information.
-</Step>
-
-<Step title="Connect to the hierarchy">
-  Link your artifact to its parent. A Feature belongs to a Capability, a
-  Requirement belongs to a Feature, and so on. These connections create
-  traceability.
-</Step>
-
-<Step title="Reference related artifacts">
-  Link to User Types affected by this artifact, Core Entities it involves, or Projects tracking its implementation.
-</Step>
-</Steps>
-
-## AI-Assisted Writing
-
-Product Graph's AI assistant helps you create better artifacts by:
-
-- Suggesting improvements to clarity and completeness
-- Identifying missing requirements or edge cases
-- Generating acceptance criteria from requirements
-- Ensuring consistency across your documentation
-
-<Tip>
-  Use the AI assistant to transform rough notes into well-structured artifacts.
-  Paste your ideas and let the AI help organize them into the right artifact
-  types.
-</Tip>

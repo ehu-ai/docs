@@ -42,8 +42,8 @@
           "features/product-artifacts",
           "features/chat",
           "features/editor",
-          "features/collaboration",
-          "features/documents"
+          "features/documents",
+          "features/collaboration"
         ]
       }
     ]

@@ -4,130 +4,181 @@ icon: "file-lines"
 description: "Create and manage rich documents for product documentation, research, and reference materials"
 ---
 
-Documents in Product Graph provide flexible, rich-text pages for capturing information that doesn't fit neatly into structured artifacts. Use documents for research, meeting notes, reference materials, and more.
+Documents are general-purpose, flexible artifacts for capturing and organizing knowledge within your organization. Unlike artifacts in the [product hierarchy](/features/product-artifacts#the-artifact-hierarchy), Documents exist independently as standalone content containers that can hold any type of documentation, notes, or information relevant to your team.
 
-## Documents vs Artifacts
+## What are Documents?
 
-<Tabs>
-<Tab title="Documents">
-  Flexible, free-form content for:
-  - Research and discovery notes
-  - Meeting notes and summaries
-  - Reference materials and guides
-  - Draft ideas and brainstorming
-  - Supporting documentation
-</Tab>
+Documents serve as your organizational knowledge base, providing a space for content that doesn't fit within the formal product specification hierarchy. They're designed to be:
 
-<Tab title="Artifacts">
-  Structured content for:
-  - Requirements and specifications
-  - User stories and acceptance criteria
-  - Decision records
-  - API documentation
-  - Formal product definitions
-</Tab>
-</Tabs>
+- **Flexible**: No formal structure requirements—content is shaped by your needs
+- **Independent**: Created at any time, outside the product specification workflow
+- **Versatile**: Hold any type of content from meeting notes to technical guides
+- **Template-ready**: Apply templates for consistency or start from scratch
 
-<Tip>
-  Start with a document when exploring ideas, then promote key content to
-  structured artifacts when it's ready.
-</Tip>
+## Common Use Cases
 
-## Creating Documents
-
-<Steps>
-<Step title="Create a new document">
-  Click the "New" button and select "Document". Choose a location in your workspace or project.
-</Step>
-
-<Step title="Add your content">
-  Write freely using the rich text editor. Add formatting, images, tables, and
-  embedded content as needed.
-</Step>
-
-<Step title="Organize and tag">
-  Add tags and organize your document within the appropriate folder or project for easy discovery.
-</Step>
-</Steps>
-
-## Document Features
+Documents excel at capturing the knowledge that surrounds and supports product development without cluttering your formal specifications.
 
 <CardGroup cols={2}>
-  <Card title="Rich Formatting" icon="text">
-    Full rich text editing with headings, lists, tables, images, and more.
+  <Card title="Meeting Notes" icon="comments">
+    Capture discussions, decisions, and action items from team meetings,
+    stakeholder reviews, and planning sessions.
   </Card>
-  <Card title="Embeds" icon="window-restore">
-    Embed content from other tools like Figma, Loom, and Miro directly in your
-    documents.
+  <Card title="Research & Discovery" icon="magnifying-glass">
+    Document user research findings, competitive analysis, market research, and
+    discovery insights.
   </Card>
-  <Card title="Templates" icon="copy">
-    Start from templates for common document types like meeting notes or
-    research summaries.
+  <Card title="Process Documentation" icon="diagram-project">
+    Define team workflows, development processes, release procedures, and
+    operational guidelines.
   </Card>
-  <Card title="Version History" icon="clock-rotate-left">
-    Track changes over time and restore previous versions when needed.
+  <Card title="Reference Materials" icon="book">
+    Store API references, integration guides, vendor documentation, and
+    technical specifications.
+  </Card>
+  <Card title="Decision Records" icon="scale-balanced">
+    Track architectural decisions, design rationale, and the context behind
+    important choices.
+  </Card>
+  <Card title="Onboarding Guides" icon="graduation-cap">
+    Create team onboarding materials, role-specific guides, and knowledge
+    transfer documents.
   </Card>
 </CardGroup>
 
-## Document Organization
+## Documents vs. Product Hierarchy
 
-### Folders
+The key distinction between Documents and [Product Artifacts](/features/product-artifacts) lies in their purpose and structure:
 
-Organize documents into folders to create a clear hierarchy:
+### Product Artifacts
 
-- Group by project, team, or topic
-- Nest folders for deeper organization
-- Drag and drop to reorganize
+Product Artifacts follow a defined hierarchy (Product → Capability → Feature → Requirement → Acceptance Criterion) designed for:
 
-### Tags
+- Traceability from strategy to implementation
+- AI agent consumption during development
+- Structured specifications with consistent format
+- Version-controlled product decisions
 
-Apply tags for cross-cutting categorization:
+### Documents
 
-- Find documents across folders
-- Create custom tag taxonomies
-- Filter views by tag
+Documents operate outside this hierarchy, providing:
 
-### Search
+- Freedom to structure content as needed
+- A home for supporting knowledge and context
+- Quick capture without formal requirements
+- Organizational memory that persists alongside your product
 
-Full-text search across all documents:
+The two complement each other. Research captured in a Document might inform Requirements. Meeting notes might reference Features under discussion. Use [artifact mentions](/features/editor#artifact-mentions) to connect related content across both types.
 
-- Search document content
-- Filter by date, author, or project
-- Find related documents quickly
+## Working with Documents
 
-## Import and Export
+### Creating Documents
 
-<CardGroup cols={2}>
-  <Card title="Import" icon="upload">
-    Bring in existing documentation from: - Markdown files - Notion exports -
-    Confluence pages - Google Docs
-  </Card>
-  <Card title="Export" icon="download">
-    Export your documents in multiple formats: - Markdown - PDF - HTML - Plain
-    text
-  </Card>
-</CardGroup>
+Create a new document from the documents section. Choose to:
 
-## Best Practices
+1. **Start blank**: Begin with an empty document
+2. **Use a template**: Apply a pre-built structure for common document types
 
-<Tip>
-  **Keep documents focused** — Each document should have a clear purpose. If a
-  document covers too many topics, consider splitting it into multiple
-  documents.
-</Tip>
+### Templates
 
-<Tip>
-  **Use descriptive titles** — Write titles that describe the content clearly.
-  Avoid generic names like "Notes" or "Draft" without context.
-</Tip>
+Templates provide consistent structure for recurring document types. Product Graph includes templates for common use cases:
 
-<Tip>
-  **Link related content** — Create links between documents and artifacts to
-  build a connected knowledge base that's easy to navigate.
-</Tip>
+<AccordionGroup>
+  <Accordion title="Business & Strategy Templates">
+    - **Company Mission & Vision**: Define organizational purpose and direction
+    - **Strategy**: Capture strategic objectives and initiatives - **Lean
+    Canvas**: One-page business model overview - **Key Insights**: Document
+    unique perspectives and market opportunities - **Problem Statement**:
+    Articulate the problem you're solving - **Solution Proposal**: Outline
+    proposed solutions and approaches
+  </Accordion>
+  <Accordion title="Planning & Communication Templates">
+    - **Six Pager**: Amazon-style narrative document for proposals - **Investor
+    Elevator Pitch**: Concise pitch for investor conversations - **Seed Investor
+    One-Pager**: Quick overview for seed funding - **Seed Investor Pitch**:
+    Comprehensive investor presentation - **Hypothesis**: Document assumptions
+    and testing plans
+  </Accordion>
+  <Accordion title="Product Templates">
+    - **SaaS Company Overview**: Comprehensive company and product overview -
+    **Project**: Structured template for project documentation
+  </Accordion>
+</AccordionGroup>
 
-<Tip>
-  **Promote to artifacts** — When a document contains mature requirements or
-  specifications, promote that content to a structured artifact for better
-  organization and tooling integration.
-</Tip>
+Templates include placeholder text and section guidance to help you fill in the relevant information.
+
+### Editing Documents
+
+Documents use the same powerful [Editor](/features/editor) as all other artifacts in Product Graph:
+
+- **Rich formatting**: Headings, lists, tables, code blocks, images
+- **Slash commands**: Type `/` to insert blocks quickly
+- **AI assistance**: Generate and refine content with AI
+- **Artifact mentions**: Reference other documents and product artifacts with `@`
+- **Real-time collaboration**: Work together with teammates simultaneously
+
+### Archiving Documents
+
+Documents you no longer need can be archived:
+
+- **Archive**: Remove from active view without deleting
+- **Restore**: Bring archived documents back when needed
+- **Permanent delete**: Remove archived documents permanently
+
+Archiving is preferred over deletion as it preserves document history and allows recovery if needed.
+
+## Cross-Linking
+
+Connect Documents to your product hierarchy using:
+
+### Artifact Mentions
+
+Type `@` in any document to reference:
+
+- Products, Capabilities, Features
+- Requirements, Acceptance Criteria
+- User Types, Core Entities
+- Projects and other Documents
+
+Mentions create navigable links that help readers discover related content.
+
+### Attachments
+
+Attach documents to product artifacts to provide supplementary context:
+
+- Attach research documents to Features they inform
+- Link meeting notes to Projects they relate to
+- Connect decision records to the artifacts they affect
+
+Attachments create bidirectional relationships, making it easy to navigate between formal specifications and supporting documentation.
+
+## Version History
+
+Every document maintains a complete version history:
+
+- **Automatic versioning**: New versions are created as you edit
+- **Version browser**: Review previous versions of any document
+- **Compare changes**: See how content evolved over time
+- **Restore versions**: Return to an earlier version if needed
+
+Version history ensures you never lose important content and can always trace how a document developed.
+
+## Collaboration
+
+Documents fully support [real-time collaboration](/features/collaboration):
+
+- Multiple users can edit simultaneously
+- Changes sync instantly across all connected sessions
+- AI generation is visible to all collaborators
+- Conflict-free editing with automatic merging
+
+## Chat Integration
+
+Each document has an integrated [Chat](/features/chat) panel for:
+
+- Discussing the document with AI assistance
+- Asking questions about the content
+- Generating and refining sections through conversation
+- Researching topics with web search
+
+Chat conversations are saved with the document, preserving context for future reference.

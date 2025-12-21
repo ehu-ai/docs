@@ -4,91 +4,208 @@ icon: "pen-to-square"
 description: "A powerful editor designed for writing clear, structured product documentation"
 ---
 
-The Product Graph Editor is purpose-built for creating product documentation. It combines the simplicity of modern writing tools with powerful features for structuring requirements and specifications.
-
-## Writing Experience
-
-The editor provides a clean, distraction-free writing environment with:
-
-- **Rich text formatting** for clear, readable documents
-- **Markdown support** for those who prefer keyboard-driven writing
-- **Slash commands** for quick access to formatting and components
-- **AI assistance** integrated directly into your writing flow
-
-## Structured Content
-
-<CardGroup cols={2}>
-  <Card title="Templates" icon="table-cells">
-    Start with templates designed for requirements, specifications, and other
-    product artifacts.
-  </Card>
-  <Card title="Components" icon="puzzle-piece">
-    Insert structured components like acceptance criteria, user stories, and
-    decision records.
-  </Card>
-  <Card title="Variables" icon="brackets-curly">
-    Use variables for consistent terminology and easy updates across documents.
-  </Card>
-  <Card title="References" icon="link">
-    Link to other artifacts, creating a connected knowledge graph of your
-    product.
-  </Card>
-</CardGroup>
+The Editor is the primary interface for creating and editing content in Product Graph. Built on a modern rich-text foundation, it provides a distraction-free writing experience with powerful formatting tools, AI assistance, and seamless collaboration.
 
 ## AI-Powered Writing
 
-The editor includes AI capabilities that help you write better documentation:
+The editor integrates AI assistance directly into your writing workflow.
 
-<Steps>
-<Step title="Inline suggestions">
-  Get real-time suggestions as you write. The AI can complete sentences, suggest improvements, or expand on your ideas.
-</Step>
+### Selection-Based Editing
 
-<Step title="Content generation">
-  Highlight a section and ask the AI to expand, summarize, or rephrase it.
-  Generate acceptance criteria, edge cases, or technical details.
-</Step>
+Highlight specific text to access AI-powered editing:
 
-<Step title="Quality checks">
-  Run AI-powered checks to identify ambiguous language, missing requirements, or inconsistencies with other documents.
-</Step>
-</Steps>
+- **Expand**: Elaborate on selected content
+- **Summarize**: Condense lengthy passages
+- **Rewrite**: Improve clarity or tone
+- **Custom instructions**: Provide specific guidance for how to modify the selection
 
-## Formatting Features
+The AI generates suggestions as tracked changes, allowing you to review, accept, or reject each modification.
 
-<Tabs>
-<Tab title="Text Formatting">
-  - **Bold**, *italic*, and ~~strikethrough~~
-  - Headings (H1-H6)
-  - Bulleted and numbered lists
-  - Code blocks and inline code
-  - Blockquotes and callouts
-</Tab>
+## Change Tracking & Review
 
-<Tab title="Structured Elements">
-  - Tables for data and comparisons - Checklists for tracking progress -
-  Collapsible sections for detailed content - Embedded diagrams and images
-</Tab>
+Every AI-generated edit is presented as a tracked change for your review. This ensures you always have full control over what content makes it into your documents—nothing is applied silently.
 
-<Tab title="Product Components">
-  - User story cards
-  - Acceptance criteria blocks
-  - Decision record templates
-  - API specification blocks
-</Tab>
-</Tabs>
+### Visual Change Indicators
 
-## Keyboard Shortcuts
+Changes are displayed inline with clear visual formatting:
 
-| Action        | Shortcut       |
-| ------------- | -------------- |
-| Bold          | `⌘/Ctrl + B`   |
-| Italic        | `⌘/Ctrl + I`   |
-| Heading       | `⌘/Ctrl + 1-6` |
-| Link          | `⌘/Ctrl + K`   |
-| Slash command | `/`            |
+| Change Type  | Visual Style      | Description                                 |
+| ------------ | ----------------- | ------------------------------------------- |
+| Insertion    | Green highlight   | New content added by AI                     |
+| Deletion     | Red strikethrough | Content the AI proposes removing            |
+| Modification | Blue highlight    | Updated content that replaces existing text |
+
+### Change Navigation
+
+| Action          | Keyboard Shortcut    | Description                    |
+| --------------- | -------------------- | ------------------------------ |
+| Next change     | `⌘/Ctrl + Shift + .` | Jump to the next changeset     |
+| Previous change | `⌘/Ctrl + Shift + ,` | Jump to the previous changeset |
+
+### Accepting and Rejecting Changes
+
+Review each change individually or handle them all at once:
+
+| Action        | Keyboard Shortcut    | Description                                   |
+| ------------- | -------------------- | --------------------------------------------- |
+| Accept change | `⌘/Ctrl + Shift + A` | Apply the selected change permanently         |
+| Reject change | `⌘/Ctrl + Shift + R` | Discard the selected change, keeping original |
+| Accept all    | `⌘/Ctrl + Enter`     | Apply all remaining changes                   |
+| Reject all    | `Escape`             | Discard all remaining changes                 |
+
+### Change Tracking in Collaboration
+
+When multiple users are viewing a document during AI generation:
+
+- All users see the same tracked changes in real-time
+- Any user can accept or reject changes
+- The document state stays synchronized across all sessions
+
+This makes it easy for teams to collaboratively review AI-generated content.
+
+## Block-Based Editing
+
+The editor uses a block-based approach where content is organized into discrete blocks that can be easily created, rearranged, and formatted.
+
+### Quick Insertion with Slash Commands
+
+Type `/` anywhere to open the command menu. Search or browse available blocks and formatting options:
+
+<CardGroup cols={2}>
+  <Card title="Text Formatting" icon="text">
+    Paragraph, bold, italic, underline, strikethrough, superscript, subscript,
+    and inline code
+  </Card>
+  <Card title="Headings" icon="heading">
+    Multiple heading levels (H2–H5) for organizing content hierarchically
+  </Card>
+  <Card title="Lists" icon="list">
+    Bullet lists and numbered lists for structured information
+  </Card>
+  <Card title="Code Blocks" icon="code">
+    Syntax-highlighted code blocks for technical documentation
+  </Card>
+  <Card title="Tables" icon="table">
+    Insert tables with customizable rows and columns
+  </Card>
+  <Card title="Images" icon="image">
+    Upload images directly or drag and drop from your desktop
+  </Card>
+  <Card title="Blockquotes" icon="quote-left">
+    Highlight important quotes or callouts
+  </Card>
+  <Card title="Horizontal Rules" icon="minus">
+    Visual dividers to separate content sections
+  </Card>
+</CardGroup>
+
+## Text Formatting
+
+Apply rich formatting to your text using keyboard shortcuts or the formatting toolbar.
+
+### Inline Formatting
+
+| Format        | Keyboard Shortcut    | Description            |
+| ------------- | -------------------- | ---------------------- |
+| Bold          | `⌘/Ctrl + B`         | Make text stand out    |
+| Italic        | `⌘/Ctrl + I`         | Emphasize text         |
+| Underline     | `⌘/Ctrl + U`         | Underline text         |
+| Strikethrough | `⌘/Ctrl + Shift + X` | Cross out text         |
+| Code          | `⌘/Ctrl + E`         | Inline code formatting |
+
+### Block Formatting
+
+| Block Type | Keyboard Shortcut  | Description            |
+| ---------- | ------------------ | ---------------------- |
+| Heading 2  | `⌘/Ctrl + Alt + 2` | Main section headings  |
+| Heading 3  | `⌘/Ctrl + Alt + 3` | Subsection headings    |
+| Heading 4  | `⌘/Ctrl + Alt + 4` | Minor section headings |
+| Heading 5  | `⌘/Ctrl + Alt + 5` | Smallest heading level |
 
 <Tip>
-  Use the slash command `/` to quickly access all formatting options, templates,
-  and AI features without leaving the keyboard.
+  Headings also support Markdown-style input. Type `##` followed by a space to
+  create a heading.
 </Tip>
+
+## Artifact Mentions
+
+Reference other artifacts in your documentation using mentions. Type `@` to search and insert links to any artifact in your product.
+
+Mentions support all artifact types:
+
+- Products, Capabilities, Features, Requirements, Acceptance Criteria
+- User Types, Core Entities, Projects
+- Documents (Pages)
+
+When you insert a mention, it creates an inline link that readers can click to navigate directly to the referenced artifact. The editor provides autocomplete suggestions as you type, filtering by artifact name or type.
+
+## Images
+
+The editor provides flexible options for adding images to your documentation.
+
+### Adding Images
+
+- **Slash command**: Type `/image` to trigger the upload dialog
+- **Drag and drop**: Drag images directly from your desktop into the editor
+- **Paste**: Paste images from your clipboard (`⌘/Ctrl + V`)
+
+### Image Controls
+
+Once inserted, images can be:
+
+- **Resized**: Drag the edges to adjust width (0–100% of container)
+- **Aligned**: Position left, center, or right within the document
+
+Supported formats include JPEG, PNG, GIF, and WebP.
+
+## Links
+
+### External Links
+
+Highlight text and press `⌘/Ctrl + K` to add a hyperlink to an external URL. The link editor provides options to edit or remove links.
+
+### Internal Artifact Links
+
+Use `@mentions` to create links to other artifacts. These links are contextual and update automatically if the artifact's title changes.
+
+## Tables
+
+Insert tables using the `/table` command. Tables support:
+
+- **Header rows**: The first row is styled as a header
+- **Column and row management**: Add or remove rows and columns through context menus
+- **Cell selection**: Click and drag to select multiple cells
+- **Column resizing**: Drag column borders to adjust width
+
+## Code Blocks
+
+Create code blocks with `/codeblock` for displaying code snippets with syntax highlighting. The editor automatically detects the programming language and applies appropriate syntax coloring.
+
+## Markdown Support
+
+The editor understands common Markdown syntax as you type:
+
+| Markdown     | Result            |
+| ------------ | ----------------- |
+| `# Heading`  | Creates a heading |
+| `**bold**`   | Bold text         |
+| `*italic*`   | Italic text       |
+| `- item`     | Bullet list       |
+| `1. item`    | Numbered list     |
+| `` `code` `` | Inline code       |
+| `---`        | Horizontal rule   |
+| `> quote`    | Blockquote        |
+
+## Version History
+
+Every document maintains a version history. Access previous versions to:
+
+- Review how a document evolved over time
+- Compare changes between versions
+- Restore earlier versions if needed
+
+Versions are created automatically when changes are saved and can be browsed through the versions drawer.
+
+## Autosave
+
+Changes are automatically saved as you type. The editor uses real-time synchronization, so your work is preserved even if you close the browser or lose connection temporarily.

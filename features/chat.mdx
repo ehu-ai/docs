@@ -36,23 +36,42 @@ Chat in Product Graph isn't just a generic AI assistant—it's deeply integrated
   </Card>
 </CardGroup>
 
-## Using Chat
+## Adding Context
 
-<Steps>
-<Step title="Start a conversation">
-  Open the chat panel from any document or project. Your current context is automatically included.
-</Step>
+Enrich your conversations by bringing in additional context beyond what's already in your product documentation.
 
-<Step title="Ask questions or share ideas">
-  Type your question or idea naturally. The AI understands product management
-  terminology and can help with: - Clarifying requirements - Suggesting
-  improvements - Identifying edge cases - Generating documentation
-</Step>
+### Attachments
 
-<Step title="Apply suggestions">
-  When the AI suggests changes or generates content, you can apply it directly to your documents with one click.
-</Step>
-</Steps>
+Upload files directly to your chat to give the AI more context:
+
+- **Images**: Screenshots, diagrams, wireframes, and mockups
+- **PDFs**: Research documents, specifications, and reference materials
+
+<Info>
+  Support for text files including markdown, plain text, and DOCX is coming
+  soon.
+</Info>
+
+### Artifact Mentions
+
+Reference other artifacts in your messages using mentions. Type `@` to search and select any artifact in your product. The AI will pull in that artifact's content to inform its response, making it easy to ask questions that span multiple documents or compare requirements across features.
+
+## Document Editing from Chat
+
+When you ask the AI to edit your document through chat, changes are applied as [tracked revisions](/features/editor#change-tracking--review)—never directly overwriting your content. The AI proposes changes; you review and approve.
+
+### Creating Child Artifacts
+
+Beyond editing the current document, Chat can create new artifacts in your product hierarchy:
+
+1. **Propose before creating**: The AI always proposes what it plans to create and waits for your confirmation
+2. **Batch creation**: Multiple related artifacts (like several requirements) can be created in parallel
+3. **Automatic linking**: New artifacts are properly linked to their parents in the hierarchy
+
+<Info>
+  The AI will never create artifacts without first explaining what it intends to
+  create and receiving your approval.
+</Info>
 
 ## Example Prompts
 
@@ -68,13 +87,15 @@ Chat in Product Graph isn't just a generic AI assistant—it's deeply integrated
 - "Create a user story for the shopping cart feature"
 - "Write API documentation for the endpoints we discussed"
 
+### Document editing
+
+- "Add a section about security considerations"
+- "Make the overview more concise"
+- "Rewrite this in a more technical tone"
+- "Break this long paragraph into bullet points"
+
 ### Context questions
 
 - "What decisions have we made about the payment system?"
 - "Show me all requirements related to user onboarding"
 - "What was the reasoning behind using GraphQL?"
-
-<Info>
-  Chat conversations are saved and can be referenced later, making it easy to
-  track how requirements evolved through discussion.
-</Info>

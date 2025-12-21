@@ -67,10 +67,10 @@
   },
   "analytics": {
     "mixpanel": {
-      "projectToken": "1b0622c471882cb20f2f94442f0812c3"
+      "projectToken": "cd94ba8260ba06ad30ea47ef7e92d9a8"
     },
     "gtm": {
-      "tagId": "GTM-PB75CTS9"
+      "tagId": "GTM-NK5NCVKV"
     }
   },
   "seo": {
